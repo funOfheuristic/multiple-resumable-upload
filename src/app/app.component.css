@@ -1,0 +1,9 @@
+#drop_zone {
+    border: 3px #46b6d8 dotted;
+    height: 100px;
+  }
+
+.file-list{
+  display: grid;
+  grid-template-columns: 1fr 2fr 0.5fr;
+}

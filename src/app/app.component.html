@@ -1,20 +1,39 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div >
+  <h1 style="text-align: center">Fun Of Heuristic Resumable Multiple File Upload</h1>
+  
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div>
+  <mat-card style="width: 50vw; margin: auto">
+    <mat-card-header>
+      <mat-card-title>File Upload</mat-card-title>
+    </mat-card-header>
+    <!-- <button mat-raised-button (click)="fileSelect.click()">Select File</button><br><br> -->
+    <div *ngFor="let file of selectedFiles" class="file-list">
+      <h4 *ngIf="file?.fileName.length > 0">Selected File: {{file?.fileName}}</h4>
+      <mat-progress-bar style="margin-top: 30px" mode="determinate" [value]="file?.uploadedPercent"></mat-progress-bar>
+      <button mat-flat-button><mat-icon aria-hidden="false" aria-label="Example home icon" (click)="deleteFile(file)">delete</mat-icon></button>
+    </div>
+    <!-- <h4 *ngIf="name.length > 0">Selected File: {{name}}</h4>
+      <input type="file" hidden #fileSelect name="largeFile" (change)="onFileSelect($event)" /> -->
+  
+      <button mat-raised-button (click)="uploadFiles()">Upload</button>
+      <br><br>
+
+      <div id="drop_zone" (drop)="dropHandler($event)" (dragover)="dragOverHandler($event)">
+        <p>Drag and Deop File here...</p>
+      </div>
+  
+    <mat-card-content>
+      
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="goToLink('https://youtu.be/TEBKCNZigQ8')">Video</button>
+      <button mat-button (click)="goToLink('https://www.youtube.com/funofheuristic')">Channel</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+
+
 
